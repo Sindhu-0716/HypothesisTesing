@@ -28,6 +28,8 @@ Reject the NULL.
 * * Correlation between impressions and clicks? What does it intuitively mean?
 ##### A correlation between click and impression is a positive relation. And correlation here is the strongest that means optimizing to viewable correlations is a better proxy for a brand advertiser than a click-through rate.
 
+* *The hyptest.r file is well commented and answers all the questions related to Click through rates, Correlation & Hypothesis testing on Hypotheses shown above.
+
 
 
 
