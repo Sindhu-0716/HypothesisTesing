@@ -6,7 +6,7 @@ length(unique(CustomerData$CID))
 # Sum up total spending by customer
 s<-sum(CustomerData$spend)
 s
-#find the average and median spending
+#Find the average and median spending of the customers
 spent<-median(CustomerData$spend)
 spent
 customer_mean<-mean(CustomerData$spend)
@@ -38,14 +38,17 @@ Y
 Z
 
 
-# Calculate total_spending by -customer month
+# Calculate total_spending by Customer in December & May
 Q<-filter(CustomerData,month %in% c ('7','8','9','10','11','12'))
 L<-filter(CustomerData,month %in% c ('1','2','3','4','5','6'))
 S<-filter(CustomerData,month == '5')
 K<-filter(CustomerData,monCustomerDatath == '12')
+
 # Test if total_spending in May is same as total_spending in Dec
 t.test(S$spend,K$spend, alternative = "two.sided", var.equal = FALSE)
-# Write the null, alternate hypothesis, what test you used, and doo you reject the null and why? 
+# Write the null, alternate hypothesis, what test you used, and do you reject the null and why
+
+# Calculate total_spending by Customer in November & September
 C<-filter(CustomerData,month == '11')
 O<-filter(CustomerData,month == '9')
 t.test(S$spend,K$spend, alternative = "two.sided", var.equal = FALSE)
@@ -70,10 +73,6 @@ ggscatter(CustomerData, x = "clicks", y = "impressions",
           cor.coef = TRUE, cor.method = "pearson",
           xlab = "clicks", ylab = "impression")
 
-
-
-
-
 #Compute CTR
 ##data$ctr = data$clicks/data$impressions
 ##Compare CTR between quarters at 95% sig level (alpha = .05)
@@ -87,12 +86,6 @@ DAT<-data.frame(CustomerData$month==c("1", "2","3"),
                 CustomerData=c("1000", "1300"),
                 Clicks=c("500", "600"),
 
-
-
-
-
-
-data
 data<-aggregate(cbind(clicks,impressions)~month, dt, sum)
 merging <- mutate(anova, Quarter1=data$month=='1'|data$month=='2'|data$month=='3',Quarter2=data$month=='4'|data$month=='5'|data$month=='6',Quarter3=data$month=='7'|data$month=='8'|data$month=='9',Quarter4=data$month=='10'|data$month=='11'|data$month=='12')
 merging
@@ -105,9 +98,6 @@ x<-sum(CustomerData$clicks)
 x
 y<-sum(CustomerData$impressions)
 y
-
-
-
 
 data<-aggregate(cbind(clicks,impressions)~month, dt, sum)
 data
